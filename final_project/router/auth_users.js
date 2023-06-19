@@ -98,7 +98,7 @@ regd_users.delete("/auth/review/:isbn", (req, res) => {
     let filtered_review = books[isbn]["reviews"];
 
     if (filtered_review[reviewer]){
-        //delete filtered_review[reviewer];
+        delete filtered_review[reviewer];
         res.send(`Reviews for the ISBN  ${isbn}  deleted.`);
     }
     else{
